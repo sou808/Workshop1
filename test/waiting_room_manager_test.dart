@@ -1,0 +1,25 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:waiting_room_app/waiting_room_manager.dart';
+void main() {
+test('should add a client to the waiting list', () {
+// ARRANGE: Set up the necessary objects and variables.
+final manager = WaitingRoomManager();
+// ACT: Call the method you want to test.
+manager.addClient('souha jemai');
+// ASSERT: Verify that the result is what you expect.
+expect(manager.clients.length, 1);
+expect(manager.clients.first, 'souha jemai');
+});
+// test/waiting_room_manager_test.dart
+// Add this test to the existing file
+test('should remove a client from the waiting list', () {
+// ARRANGE
+final manager = WaitingRoomManager();
+manager.addClient('souha jemai');
+manager.addClient('souha jemai');
+// ACT
+manager.removeClient('souha jemai');
+// ASSERT
+expect(manager.clients.length, 1);
+expect(manager.clients.first, 'souha jemai');
+});}

@@ -25,8 +25,7 @@ _currentTime = DateTime.now();
 }
 @override
 void dispose() {
-// This is crucial! Cancel the timer when the widget is removed from the tree
-// to prevent memory leaks and unnecessary processing.
+
 _timer.cancel();
 super.dispose();
 }
